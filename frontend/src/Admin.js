@@ -84,7 +84,8 @@ function AdminView() {
        {/*Call handelubmit -function, when click the add -button */}
        <form onSubmit={handleSubmit}>
 
-        {/*Go trough the data of database and return all data to the list. */}
+        {/*Go trough the data of database and return all data to the list. 
+        Call admincomponenet to display chosen data and delete -button.*/}
         <ul>
         {state.map((id, index) => (<AdminComponent key={index} id={id.id} tag={id.tag} english={id.english} finnish={id.finnish} deleteWord={deleteWord} /> ))}
         </ul>
