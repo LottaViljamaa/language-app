@@ -26,10 +26,15 @@ function AdminView() {
     setTagWord(e.target.value);
   }
 
-    //Take user English input
-    const handleEnglish = e => {
-      setEnglisWord(e.target.value);
-    }
+  //Take user English input
+  const handleEnglish = e => {
+    setEnglisWord(e.target.value);
+  }
+
+  //Take user Finnish input
+  const handleFinnish = e => {
+    setFinnishWord(e.target.value);
+  }
 
     //Connect to the database and delete the word pair with right id. 
     function deleteWord(id) {
@@ -75,6 +80,7 @@ function AdminView() {
         <Input
           placeholder="Write word in Finnish"
           value={finnishWord}
+          onChange={handleFinnish}
           required
         ></Input>
         
