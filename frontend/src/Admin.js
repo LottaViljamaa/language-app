@@ -113,7 +113,7 @@ function AdminView() {
       ></Input>
 
       {/* Add -button */}
-      <Button variant="contained" type='submit'>Add</Button>
+      <Button sx={{ m: 2 }} variant="contained" type='submit'>Add</Button>
 
       <h2>Word pairs:</h2> 
 
