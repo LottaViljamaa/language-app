@@ -81,15 +81,15 @@ function AdminView() {
     return (
       <div> 
         <h1>This page is for Admin!</h1>
-
-        {/* Input field to add category. Calls function, which take user input. */}
-       
+       {/*Call handelubmit -function, when click the add -button */}
+       <form onSubmit={handleSubmit}>
 
         {/*Go trough the data of database and return all data to the list. */}
         <ul>
         {state.map((id, index) => (<AdminComponent key={index} id={id.id} tag={id.tag} english={id.english} finnish={id.finnish} deleteWord={deleteWord} /> ))}
         </ul>
-        
+
+        {/* Input field to add category. Calls function, which take user input. */}
          <Input
           placeholder="Write a category"
           value={tagWord}
@@ -115,6 +115,7 @@ function AdminView() {
 
         {/* Add -button */}
         <Button type='submit'>Add</Button>
+        </form>
       </div>
     ) 
 }
