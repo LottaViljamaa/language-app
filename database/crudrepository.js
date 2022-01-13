@@ -29,7 +29,7 @@ let connectionFunctions = {
         if(err) {
           reject(err);
         } else {
-          resolve("New language added.");
+          resolve("New word added.");
         }
       });
     } return new Promise(savethat);
@@ -62,6 +62,18 @@ let connectionFunctions = {
   findById: (id) => { 
     function find(resolve, reject) {
       pool.query('SELECT * FROM languageApp WHERE id=?', id, (err, locations) => {
+        if(err) {
+          reject(err);
+        } else {
+          resolve (locations);
+        }
+      });
+    } return new Promise(find);
+  },
+
+  findByTag: (tag) => { 
+    function find(resolve, reject) {
+      pool.query('SELECT * FROM languageApp WHERE tag=?', tag, (err, locations) => {
         if(err) {
           reject(err);
         } else {
