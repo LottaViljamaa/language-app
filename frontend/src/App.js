@@ -8,13 +8,13 @@ import UserView from './User';
 
 function App() {
     return (
-      <BrowserRouter>
+      <BrowserRouter className="App">
       {/* Return navigation bar as a list. */}
       {/* Link to the right url to display the right page */}
       <nav className="Navigation">
         <ul>
           <li className="FirstPage">
-            <Link to="/">Tervetuloa</Link>
+            <Link to="/">Welcome</Link>
           </li>
           <li className="SecondPage">
             <Link to="admin">Admin</Link>
