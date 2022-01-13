@@ -21,6 +21,11 @@ function AdminView() {
         .then(data => setState(data))
   },[])
 
+   //Take user tag input
+   const handleTag = e => {
+    setTagWord(e.target.value);
+  }
+
     //Connect to the database and delete the word pair with right id. 
     function deleteWord(id) {
       const deleteWord = [...state].filter(wordPar => wordPar.id !== id)
@@ -49,6 +54,7 @@ function AdminView() {
          <Input
           placeholder="Write a category"
           value={tagWord}
+          onChange={handleTag}
           required
         ></Input>
 
