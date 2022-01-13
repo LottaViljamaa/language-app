@@ -3,7 +3,6 @@ import Button from '@mui/material/Button';
 import TableCell from '@mui/material/TableCell';
 import TableRow from '@mui/material/TableRow';
 
-
 function AdminComponent(props) {
 
 return ( 
@@ -14,7 +13,7 @@ return (
     <TableCell align="centre">{props.category}</TableCell>
  
       {/* Return delete -button. It calls deleteWord -function, when cliked. */}
-      <Button
+      <Button variant="contained"
         className="deleteWord"
         onClick={() => props.deleteWord(props.id)}>
         &times;
