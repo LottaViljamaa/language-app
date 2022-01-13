@@ -13,6 +13,7 @@ const listener = app.listen(8080, () => {
   console.log(`Listening on port ${listener.address().port}`)
 });
 
+//Allow to access to database from everywhere
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   next();
@@ -21,9 +22,10 @@ app.use((req, res, next) => {
 app.use(express.json());
 app.use(cors());
 
+//App use this path
 app.use('/languageApp', languageApp);
 
-//HAE KAIKKI SIJAINNIT
+//Gets all word pairs
 languageApp.get('/', async (req, res) => {
   let result = await pool.findAll();
   res.send(result);
@@ -31,7 +33,7 @@ languageApp.get('/', async (req, res) => {
 
 
 
-//HAE TIETTY ID
+//Get word pair with spesific id
 languageApp.get('/:id([0-9]+)', async (req, res) => {
   let id = req.params.id;
   let result2 = await pool.findById(id);
@@ -42,7 +44,7 @@ languageApp.get('/:id([0-9]+)', async (req, res) => {
   }
 });
 
-//HAE TIETTY TAG
+//Get word pairs with spesific category
 languageApp.get('/:tag', async (req, res) => {
   let tag = req.params.tag;
   let result2 = await pool.findByTag(tag);
@@ -53,8 +55,7 @@ languageApp.get('/:tag', async (req, res) => {
   }
 });
 
-//POISTA TIETTY ID
-//TODO: virheidenkäsittely
+//Delete word pair with spesific id
 languageApp.delete('/:id([0-9]+)', async (req, res) => {
   let id = req.params.id;
   let result = await pool.deleteById(id);
@@ -63,7 +64,7 @@ languageApp.delete('/:id([0-9]+)', async (req, res) => {
   });
 });
 
-//LISÄÄ UUSI SIJAINTI
+//Add new word pair
 languageApp.post('/', async (req, res) => {
   try {
     const idSchema = {
