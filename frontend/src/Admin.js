@@ -90,6 +90,8 @@ function AdminView() {
         {state.map((id, index) => (<AdminComponent key={index} id={id.id} tag={id.tag} english={id.english} finnish={id.finnish} deleteWord={deleteWord} /> ))}
         </ul>
 
+        <h1>Add new word</h1>
+
         {/* Input field to add category. Calls function, which take user input. */}
          <Input
           placeholder="Write a category"
