@@ -59,10 +59,6 @@ function AdminView() {
     .then(response => response.json())
     .then(json => console.log(json))
     .catch(err => console.log(err));
-    console.log(tagWord);
-    console.log(englisWord);
-    console.log(finnishWord);
-
     //Set user input empty
     setTagWord('');
     setEnglisWord('');
@@ -80,6 +76,7 @@ function AdminView() {
         "Content-type": "application/json"
       }
     })
+    
   }
 
     return ( 
