@@ -13,7 +13,9 @@ return (
       {props.finnish + " "}
 
       {/* Return delete -button. It calls deleteWord -function, when cliked. */}
-      <Button>
+      <Button
+        className="deleteWord"
+        onClick={() => props.deleteWord(props.id)}>
         &times;
       </Button>
     </li>
