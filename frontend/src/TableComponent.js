@@ -32,14 +32,14 @@ function TableComponent(props) {
 
 return ( 
   <TableRow className="table">
-    <TableCell align="centre">
+    <TableCell className="componentEnglish" align="centre">
       <Input
         placeholder="Write your answer"
         onBlur={checkInput}
       ></Input>
     </TableCell>
-    <TableCell align="centre">{props.english}</TableCell>
-    <TableCell align="centre">{props.category}</TableCell>
+    <TableCell className="componentEnglish" align="centre">{props.english}</TableCell>
+    <TableCell className="componentEnglish" align="centre">{props.category}</TableCell>
   </TableRow>
 )
 }
