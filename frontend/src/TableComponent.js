@@ -1,26 +1,31 @@
 import React from "react";
-// import { useState } from "react";
-import UserView from "./User";
 
 
 function TableComponent(props) {
-  // const [check, setCheck] = useState([]);
 
-  //Tee virheentarkistus tähän!
-
-   function checkInput () {
-    if (props.finnish==="kissa") {
-      console.log("JEE");
-    }
+  //Take user input
+  function checkInput(e) {
+    const rightAnswer = e.target.value
+    //If user input matches to the word in the database, 
+    //it will put to the list with other right words.
+    //Otherwise it will put to the list with other wrong answers. 
+      if (rightAnswer===props.finnish) {
+        props.rightAnswer(rightAnswer);
+      } else {
+        props.wrongAnswer(rightAnswer);
+      }
   }
+
 return ( 
   <div>
-    {props.english}
-    <input
-    placeholder="Make your quest"
-    onClick={checkInput}
-    ></input>
-    checkInput={checkInput}
+    {/* Return  input field and English word. OnBlur calls the checkInput function, which checks user's input. */}
+   <ul key={props.id}>
+     <input
+      placeholder="Write your answer"
+      onBlur={checkInput}
+      ></input>
+      {" " + props.english}
+    </ul> 
   </div>
 )
 }
