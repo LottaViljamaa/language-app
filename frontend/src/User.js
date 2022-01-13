@@ -35,7 +35,7 @@ import TableRow from '@mui/material/TableRow';
     setComponent(
       <TableHead className="Tableheader">
       <TableRow>
-        <TableCell>Finnish</TableCell>
+        <TableCell align="centre">Finnish</TableCell>
         <TableCell align="centre">English</TableCell>
         <TableCell align="centre">Category</TableCell>
       </TableRow>
@@ -70,19 +70,16 @@ import TableRow from '@mui/material/TableRow';
   //Grow score 
   function rightAnswer(a) {
     score ++;
-    console.log("Tämä on a : " + a);
-    console.log("Your score is: " + score);
     list.push(a);
   }
 
   //Function is called, if user's answer is wrong
   function wrongAnswer() {
-    console.log("Wrong answer");
+
   }
 
   //Print the score, when submit -button is cliked
   function userAnswers() {
-    console.log(list);
     setAnswerList("Right answers: " + score + "/" + state.length);
   }
 
