@@ -9,8 +9,11 @@ import UserView from './User';
 function App() {
     return (
       <BrowserRouter>
+      {/* Return navigation bar as a list. */}
+      {/* Link to the right url to display the right page */}
       <nav className="navigaatiopalkki">
         <ul>
+          
           <li className="Welcome">
             <Link to="/">Tervetuloa</Link>
           </li>
