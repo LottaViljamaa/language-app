@@ -17,7 +17,7 @@ import TableRow from '@mui/material/TableRow';
   //Initialize the empty list, where right answers will be puttted. 
   var list = [];
 
-function UserView ({checkInput}) {
+  function UserView ({checkInput}) {
   const [state, setState] = useState([]);
   const [answerList, setAnswerList] = useState([]);
   const [component, setComponent] = useState([]);
@@ -36,8 +36,8 @@ function UserView ({checkInput}) {
       <TableHead className="Tableheader">
       <TableRow>
         <TableCell>Finnish</TableCell>
-        <TableCell align="right">English</TableCell>
-        <TableCell align="right">Category</TableCell>
+        <TableCell align="centre">English</TableCell>
+        <TableCell align="centre">Category</TableCell>
       </TableRow>
     </TableHead>
     );
@@ -55,11 +55,11 @@ function UserView ({checkInput}) {
     });
     setState(k);
     setComponent(
-      <TableHead>
+      <TableHead className="Tableheader">
       <TableRow>
         <TableCell>English</TableCell>
-        <TableCell align="right">Finnish</TableCell>
-        <TableCell align="right">Category</TableCell>
+        <TableCell align="centre">Finnish</TableCell>
+        <TableCell align="centre">Category</TableCell>
       </TableRow>
     </TableHead>
     );
@@ -83,23 +83,22 @@ function UserView ({checkInput}) {
   //Print the score, when submit -button is cliked
   function userAnswers() {
     console.log(list);
-    setAnswerList("Right answers: " + score);
+    setAnswerList("Right answers: " + score + "/" + state.length);
   }
 
   return (
-    <div>
+    <div className='userPage'>
       {/* Return buttons. User can decide the learning language. */}
-      <Button className='getAll'
+      <Button variant="outlined" className='getAll' sx={{ m: 2 }} 
         onClick={getAll}>Learn in Finnish 
-        
       </Button>
     
-      <Button className='getAll2'
+      <Button variant="outlined" className='getAll2' sx={{ m: 2 }}
         onClick={getAll2}>Learn in English
       </Button>
 
       <TableContainer>
-        <Table sx={{maxWidth: 400}}>
+        <Table>
           {component}
           <TableBody>
             {state}
@@ -108,7 +107,7 @@ function UserView ({checkInput}) {
       </TableContainer>
 
        {/* Return submit answer -button. It will call the useAnswer -function. */}
-       <Button 
+       <Button variant="outlined" color="success" sx={{ m: 2 }}
       onClick={() => userAnswers()}
         >Submit answers
       </Button>
