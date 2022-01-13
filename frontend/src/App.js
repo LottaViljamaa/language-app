@@ -11,18 +11,15 @@ function App() {
       <BrowserRouter>
       {/* Return navigation bar as a list. */}
       {/* Link to the right url to display the right page */}
-      <nav className="navigaatiopalkki">
+      <nav className="Navigation">
         <ul>
-          
-          <li className="Welcome">
+          <li className="FirstPage">
             <Link to="/">Tervetuloa</Link>
           </li>
-
-          <li className="ToinenSivu">
+          <li className="SecondPage">
             <Link to="admin">Admin</Link>
           </li>
-          
-          <li className="KolmasSivu">
+          <li className="ThirdPage">
             <Link to="user">User</Link>
           </li>
         </ul>
