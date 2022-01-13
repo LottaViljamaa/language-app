@@ -13,7 +13,9 @@ return (
     <TableCell align="centre">{props.category}</TableCell>
  
       {/* Return delete -button. It calls deleteWord -function, when cliked. */}
-      <Button variant="contained"
+      <Button 
+        sx={{ height: 50 }}
+        variant="contained"
         className="deleteWord"
         onClick={() => props.deleteWord(props.id)}>
         &times;
