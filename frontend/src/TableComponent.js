@@ -1,4 +1,5 @@
 import React from "react";
+import Input from '@mui/material/Input';
 
 
 function TableComponent(props) {
@@ -29,10 +30,10 @@ return (
   <div>
     {/* Return  input field and English word. OnBlur calls the checkInput function, which checks user's input. */}
    <ul key={props.id}>
-     <input
+     <Input
       placeholder="Write your answer"
       onBlur={checkInput}
-      ></input>
+      ></Input>
       {" " + props.english}
     </ul> 
   </div>
