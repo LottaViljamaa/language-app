@@ -36,6 +36,35 @@ function AdminView() {
     setFinnishWord(e.target.value);
   }
 
+  //Connect to the database and put the user inputs into it.  
+  function handleSubmit(e) {
+    fetch("http://localhost:8080/languageApp/", {
+      method: 'POST',
+      headers: {
+        "Accept": "application/json",
+        "Content-type": "application/json"
+      },
+      body: JSON.stringify({
+        id: id,
+        tag: tagWord,
+        english: englisWord,
+        finnish: finnishWord
+      })
+      
+    })
+    .then(response => response.json())
+    .then(json => console.log(json))
+    .catch(err => console.log(err));
+    console.log(tagWord);
+    console.log(englisWord);
+    console.log(finnishWord);
+
+    //Set user input empty
+    setTagWord('');
+    setEnglisWord('');
+    setFinnishWord('');
+  }
+
     //Connect to the database and delete the word pair with right id. 
     function deleteWord(id) {
       const deleteWord = [...state].filter(wordPar => wordPar.id !== id)
