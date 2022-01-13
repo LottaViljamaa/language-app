@@ -21,13 +21,26 @@ function AdminView() {
         .then(data => setState(data))
   },[])
 
+    //Connect to the database and delete the word pair with right id. 
+    function deleteWord(id) {
+      const deleteWord = [...state].filter(wordPar => wordPar.id !== id)
+      setState(deleteWord);
+      fetch("http://localhost:8080/languageApp/" + id, {
+        method: 'DELETE',
+        header: {
+          "Accept": "application/json",
+          "Content-type": "application/json"
+        }
+      })
+    }
+
     return (
       <div> 
         <h1>This page is for Admin!</h1>
 
         {/*Go trough the data of database and return all data to the list. */}
         <ul>
-        {state.map((id, index) => (<AdminComponent key={index} id={id.id} tag={id.tag} english={id.english} finnish={id.finnish} /> ))}
+        {state.map((id, index) => (<AdminComponent key={index} id={id.id} tag={id.tag} english={id.english} finnish={id.finnish} deleteWord={deleteWord} /> ))}
         </ul>
         
       </div>
