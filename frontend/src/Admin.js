@@ -58,6 +58,13 @@ function AdminView() {
           value={englisWord}
           required
         ></Input>
+
+        {/* Input field to add Finninsh word. Calls function, which take user input. */}
+        <Input
+          placeholder="Write word in Finnish"
+          value={finnishWord}
+          required
+        ></Input>
         
       </div>
     ) 
