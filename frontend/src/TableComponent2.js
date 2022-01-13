@@ -29,16 +29,16 @@ function TableComponent2(props) {
   }
 
 return ( 
-  <TableRow>
+  <TableRow className="userPage">
     {/* Return  input field and Finnish word. OnBlur calls the checkInput function, which checks user's input. */}
-    <TableCell align="centre">
+    <TableCell  className="componentFinnish" align="centre">
     <Input
       placeholder="Write your answer"
       onBlur={checkInput}
       ></Input>
     </TableCell>
-    <TableCell align="centre">{props.finnish}</TableCell>
-    <TableCell align="centre">{props.category}</TableCell>
+    <TableCell className="componentFinnish" align="centre">{props.finnish}</TableCell>
+    <TableCell className="componentFinnish" align="centre">{props.category}</TableCell>
   </TableRow>
 )
 }
