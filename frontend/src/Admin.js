@@ -4,8 +4,12 @@ import { useState, useEffect } from 'react';
 import AdminComponent from './AdminComponent';
 import Input from '@mui/material/Input';
 import Button from '@mui/material/Button';
-
-
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
 
 function AdminView() {
   const [state, setState] = useState([]);
@@ -65,61 +69,72 @@ function AdminView() {
     setFinnishWord('');
   }
 
-    //Connect to the database and delete the word pair with right id. 
-    function deleteWord(id) {
-      const deleteWord = [...state].filter(wordPar => wordPar.id !== id)
-      setState(deleteWord);
-      fetch("http://localhost:8080/languageApp/" + id, {
-        method: 'DELETE',
-        header: {
-          "Accept": "application/json",
-          "Content-type": "application/json"
-        }
-      })
-    }
+  //Connect to the database and delete the word pair with right id. 
+  function deleteWord(id) {
+    const deleteWord = [...state].filter(wordPar => wordPar.id !== id)
+    setState(deleteWord);
+    fetch("http://localhost:8080/languageApp/" + id, {
+      method: 'DELETE',
+      header: {
+        "Accept": "application/json",
+        "Content-type": "application/json"
+      }
+    })
+  }
 
-    return (
-      <div> 
-        <h1>This page is for Admin!</h1>
-       {/*Call handelubmit -function, when click the add -button */}
-       <form onSubmit={handleSubmit}>
+    return ( 
+    <form className='AdminPage' onSubmit={handleSubmit}>  
+      <h2>Add new word pair</h2>
+      {/* Input field to add Finninsh word. Calls function, which take user input. */}
+      <Input
+        className="inputfield"
+        placeholder="Write word in Finnish"
+        value={finnishWord}
+        onChange={handleFinnish}
+        required
+      ></Input>
 
-        {/*Go trough the data of database and return all data to the list. 
-        Call admincomponenet to display chosen data and delete -button.*/}
-        <ul>
-        {state.map((id, index) => (<AdminComponent key={index} id={id.id} tag={id.tag} english={id.english} finnish={id.finnish} deleteWord={deleteWord} /> ))}
-        </ul>
-
-        <h1>Add new word</h1>
-
-        {/* Input field to add category. Calls function, which take user input. */}
-         <Input
-          placeholder="Write a category"
-          value={tagWord}
-          onChange={handleTag}
-          required
-        ></Input>
-
-        {/* Input field to add English word. Calls function, which take user input. */}
-        <Input
-          placeholder="Write word in English"
+      {/* Input field to add English word. Calls function, which take user input. */}
+      <Input
+        className="inputfield"
+         placeholder="Write word in English"
           value={englisWord}
           onChange={handleEnglish}
           required
-        ></Input>
+      ></Input>
+        
+      {/* Input field to add category. Calls function, which take user input. */}
+      <Input
+        className="inputfield"
+        placeholder="Write a category"
+        value={tagWord}
+        onChange={handleTag}
+        required
+      ></Input>
 
-        {/* Input field to add Finninsh word. Calls function, which take user input. */}
-        <Input
-          placeholder="Write word in Finnish"
-          value={finnishWord}
-          onChange={handleFinnish}
-          required
-        ></Input>
+      {/* Add -button */}
+      <Button variant="contained" type='submit'>Add</Button>
 
-        {/* Add -button */}
-        <Button type='submit'>Add</Button>
-        </form>
-      </div>
+      <h2>Word pairs:</h2> 
+
+      {/*Call handelubmit -function, when click the add -button */}
+      <TableContainer align-items="centre">
+        <Table align="centre" >
+          <TableHead className="Tableheader2" align="centre">
+            <TableRow align="centre">
+              <TableCell>Finnish</TableCell>
+              <TableCell align="centre">English</TableCell>
+              <TableCell align="centre">Category</TableCell>
+            </TableRow>
+          </TableHead>
+        {/*Go trough the data of database and return all data to the list. 
+        Call admincomponenet to display chosen data and delete -button.*/}
+        <TableBody align="centre">
+          {state.map((id, index) => (<AdminComponent key={index} id={id.id} category={id.tag} english={id.english} finnish={id.finnish} deleteWord={deleteWord} /> ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+    </form>
     ) 
 }
 
