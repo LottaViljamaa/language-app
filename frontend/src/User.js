@@ -20,7 +20,7 @@ function UserView ({checkInput}) {
   //Go trough data from the database and put it to the variable. 
   //Return data and TAblekomponenct, which sohws chosen content.
   const k = componenets.map((index) => {
-    return <TableComponent key={index} english={index.english} finnish={index.finnish} rightAnswer={rightAnswer}/>;
+    return <TableComponent key={index} english={index.english} finnish={index.finnish} rightAnswer={rightAnswer} wrongAnswer={wrongAnswer}/>;
   });
   setState(k);
 }
@@ -33,7 +33,7 @@ function UserView ({checkInput}) {
      //Go trough data from the database and put it to the variable. 
     //Return data and TAblekomponenct, which sohws chosen content.
     const k = componenets2.map((index) => {
-      return <TableComponent2  key={index} english={index.english} finnish={index.finnish} rightAnswer={rightAnswer}/>;
+      return <TableComponent2  key={index} english={index.english} finnish={index.finnish} rightAnswer={rightAnswer} wrongAnswer={wrongAnswer}/>;
     });
     setState(k);
   }
@@ -47,6 +47,11 @@ function UserView ({checkInput}) {
     console.log("Your score is: " + score);
     list.push(a);
   }
+
+    //FUnction is called, if user's answer is wrong
+    function wrongAnswer() {
+      console.log("Wrong answer");
+    }
   return (
     <div>
       {/* Return buttons. User can decide the learning language. */}
