@@ -1,9 +1,13 @@
 require("dotenv").config();
 const pool = require("./database/crudrepository.js")
 const express = require("express");
+const cors = require('cors')
 const app = express();
 let languageApp = express.Router();
 let unexpectedErr = ("Something went wrong");
+
+const Validator = require("jsonschema").Validator;
+const validator = new Validator;
 
 const listener = app.listen(8080, () => {
   console.log(`Listening on port ${listener.address().port}`)
@@ -15,7 +19,7 @@ app.use((req, res, next) => {
 });
 
 app.use(express.json());
-
+app.use(cors());
 
 app.use('/languageApp', languageApp);
 
@@ -25,12 +29,25 @@ languageApp.get('/', async (req, res) => {
   res.send(result);
 }); 
 
+
+
 //HAE TIETTY ID
 languageApp.get('/:id([0-9]+)', async (req, res) => {
   let id = req.params.id;
   let result2 = await pool.findById(id);
   if (result2.length === 0) {
     res.send("msg: could not find resource with tag = " + id);
+  } else { 
+    res.send(result2);
+  }
+});
+
+//HAE TIETTY TAG
+languageApp.get('/:tag', async (req, res) => {
+  let tag = req.params.tag;
+  let result2 = await pool.findByTag(tag);
+  if (result2.length === 0) {
+    res.send("msg: could not find resource with tag = " + tag);
   } else { 
     res.send(result2);
   }
@@ -52,9 +69,11 @@ languageApp.post('/', async (req, res) => {
     const idSchema = {
       type: "object",
       properties: {
+        tag: { type: "string"},
         english: { type: "string"},
         finnish: { type: "string"},
       },
+      require: ["tag", "english", "finnish"]
     };
   const validation = validator.validate(req.body, idSchema);
   if (validation.errors.length > 0) {
