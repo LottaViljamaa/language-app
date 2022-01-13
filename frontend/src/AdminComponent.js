@@ -11,6 +11,11 @@ return (
       {props.tag+ " "} 
       {props.english + " "}
       {props.finnish + " "}
+
+      {/* Return delete -button. It calls deleteWord -function, when cliked. */}
+      <Button>
+        &times;
+      </Button>
     </li>
 )
 }
