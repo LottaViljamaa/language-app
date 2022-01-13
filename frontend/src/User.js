@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import TableComponent from './TableComponent';
 import TableComponent2 from './TableComponent2';
+import Button from '@mui/material/Button';
 
   //initialize the variable, which will count the score of right answers. 
   let score = 0;
@@ -73,10 +74,10 @@ function UserView ({checkInput}) {
       </ul>
 
        {/* Return submit answer -button. It will call the useAnswer -function. */}
-       <button 
+       <Button 
       onClick={() => userAnswers()}
         >Submit answers
-      </button>
+      </Button>
       {answerList}
     </div>
   )
