@@ -2,14 +2,22 @@ import React from "react";
 
 
 function TableComponent2(props) {
- 
+  
+  //Take user input
   function checkInput(e) {
-     //Take user input
-    const rightAnswer = e.target.value
+    const rightAnswer1 = e.target.value
 
+    //Lowercase the user input
+    const rightAnswer2 = rightAnswer1.toLowerCase();
+
+    //Delete extra spaces from the end of the user input  
+    const removeExtraSpace = (s) => s.trim().split(/ + /).join(" ");
+
+    //Set edited input into the variable
     //If user input matches to the word in the database, 
     //it will put to the list with other right words.
     //Otherwise it will put to the list with other wrong answers. 
+    const rightAnswer = removeExtraSpace(rightAnswer2);
       if (rightAnswer===props.english) {
         props.rightAnswer(rightAnswer);
       } else {
