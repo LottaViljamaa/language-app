@@ -24,6 +24,11 @@ import TableRow from '@mui/material/TableRow';
 
   //Connects to the database
   const getAll = async () => {
+    //Set score to 0 every time function is called
+    score = 0;
+
+   //Call answerList -function and set it empty
+    setAnswerList([]);
     const result = await fetch("http://localhost:8080/languageApp/");
     const componenets = await result.json();
     //Go trough data from the database and put it to the variable. 
@@ -45,6 +50,11 @@ import TableRow from '@mui/material/TableRow';
 
   //Connects to the database
   const getAll2 = async () => {
+    //Set score to 0 every time function is called
+    score = 0;
+
+   //Call answerList -function and set it empty
+    setAnswerList([]);
     const result = await fetch("http://localhost:8080/languageApp/");
     const componenets2 = await result.json();
 
