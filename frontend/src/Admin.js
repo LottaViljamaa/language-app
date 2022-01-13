@@ -83,7 +83,9 @@ function AdminView() {
           onChange={handleFinnish}
           required
         ></Input>
-        
+
+        {/* Add -button */}
+        <Button type='submit'>Add</Button>
       </div>
     ) 
 }
