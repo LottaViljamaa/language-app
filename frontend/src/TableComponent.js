@@ -1,4 +1,5 @@
 import React from "react";
+import './App.css';
 import Input from '@mui/material/Input';
 import TableCell from '@mui/material/TableCell';
 import TableRow from '@mui/material/TableRow';
@@ -30,15 +31,15 @@ function TableComponent(props) {
   }
 
 return ( 
-  <TableRow>
-    <TableCell align="right">
+  <TableRow className="table">
+    <TableCell align="centre">
       <Input
         placeholder="Write your answer"
         onBlur={checkInput}
       ></Input>
     </TableCell>
-    <TableCell align="right">{props.english}</TableCell>
-    <TableCell align="right">{props.tag}</TableCell>
+    <TableCell align="centre">{props.english}</TableCell>
+    <TableCell align="centre">{props.category}</TableCell>
   </TableRow>
 )
 }

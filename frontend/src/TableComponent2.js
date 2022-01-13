@@ -1,4 +1,5 @@
 import React from "react";
+import './App.css';
 import Input from '@mui/material/Input';
 import TableCell from '@mui/material/TableCell';
 import TableRow from '@mui/material/TableRow';
@@ -30,14 +31,14 @@ function TableComponent2(props) {
 return ( 
   <TableRow>
     {/* Return  input field and Finnish word. OnBlur calls the checkInput function, which checks user's input. */}
-    <TableCell align="right">
+    <TableCell align="centre">
     <Input
       placeholder="Write your answer"
       onBlur={checkInput}
       ></Input>
     </TableCell>
-    <TableCell align="right">{props.finnish}</TableCell>
-    <TableCell align="right">{props.tag}</TableCell>
+    <TableCell align="centre">{props.finnish}</TableCell>
+    <TableCell align="centre">{props.category}</TableCell>
   </TableRow>
 )
 }
