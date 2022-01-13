@@ -51,6 +51,13 @@ function AdminView() {
           value={tagWord}
           required
         ></Input>
+
+        {/* Input field to add English word. Calls function, which take user input. */}
+        <Input
+          placeholder="Write word in English"
+          value={englisWord}
+          required
+        ></Input>
         
       </div>
     ) 
