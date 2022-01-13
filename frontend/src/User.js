@@ -7,11 +7,17 @@ function UserView ({checkInput}) {
   const [state, setState] = useState([]);
   const [state2, setState2] = useState([]);
 
-  function getAll() {
-    fetch("http://localhost:8080/languageApp/")
-      .then(responde => responde.json())
-      .then(data => setState(data))
-  }
+ //Connects to the database
+ const getAll = async () => {
+  const result = await fetch("http://localhost:8080/languageApp/");
+  const componenets = await result.json();
+  //Go trough data from the database and put it to the variable. 
+  //Return data and TAblekomponenct, which sohws chosen content.
+  const k = componenets.map((index) => {
+    return <TableComponent key={index} english={index.english} finnish={index.finnish}/>;
+  });
+  setState(k);
+}
 
   function getAll2() {
     fetch("http://localhost:8080/languageApp/")
