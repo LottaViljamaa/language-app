@@ -26,6 +26,11 @@ function AdminView() {
     setTagWord(e.target.value);
   }
 
+    //Take user English input
+    const handleEnglish = e => {
+      setEnglisWord(e.target.value);
+    }
+
     //Connect to the database and delete the word pair with right id. 
     function deleteWord(id) {
       const deleteWord = [...state].filter(wordPar => wordPar.id !== id)
@@ -62,6 +67,7 @@ function AdminView() {
         <Input
           placeholder="Write word in English"
           value={englisWord}
+          onChange={handleEnglish}
           required
         ></Input>
 
