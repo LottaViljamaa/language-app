@@ -1,6 +1,8 @@
 const mysql = require('mysql');
 require("dotenv").config();
 
+
+//Create new pool and take connect to the database
 const pool = mysql.createPool({
   connectionLimit: 10,
   host: process.env.DB_HOST,
@@ -9,11 +11,13 @@ const pool = mysql.createPool({
   database: process.env.DB_DB
 });
 
+//enable a new connection
 pool.on("acquire", function (connection) {
   console.log("---");
   console.log("Connection %d acquires", connection.threadId);
 });
 
+//Release connection
 pool.on("release", function (connection) {
   console.log("Connection %d released", connection.threadId);
 });
@@ -21,6 +25,7 @@ pool.on("release", function (connection) {
 
 let connectionFunctions = {
 
+  //Add new word pair to the database
   save: (tag, english, finnish) => { 
     function savethat(resolve, reject) { 
       pool.query(
@@ -35,6 +40,7 @@ let connectionFunctions = {
     } return new Promise(savethat);
   },
 
+  //Get all data from database
   findAll: () => { 
     function find(resolve, reject) { 
       pool.query('SELECT * FROM languageApp', (err, language) => {
@@ -47,6 +53,7 @@ let connectionFunctions = {
     } return new Promise(find);
   },
   
+  //Delete word pair with spesific id
   deleteById: (id) => { 
     function deleteBy(resolve, reject) { 
       pool.query(`DELETE FROM languageApp WHERE id=?`, id,(err) => {
@@ -59,6 +66,7 @@ let connectionFunctions = {
     } return new Promise(deleteBy);
   },
   
+  //Find word pair with spesific id
   findById: (id) => { 
     function find(resolve, reject) {
       pool.query('SELECT * FROM languageApp WHERE id=?', id, (err, locations) => {
@@ -71,6 +79,7 @@ let connectionFunctions = {
     } return new Promise(find);
   },
 
+  //Dind word pair with spesific category
   findByTag: (tag) => { 
     function find(resolve, reject) {
       pool.query('SELECT * FROM languageApp WHERE tag=?', tag, (err, locations) => {
