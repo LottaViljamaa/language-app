@@ -11,7 +11,7 @@ import TableComponent2 from './TableComponent2';
 
 function UserView ({checkInput}) {
   const [state, setState] = useState([]);
-  const [state2, setState2] = useState([]);
+  const [answerList, setAnswerList] = useState([]);
 
  //Connects to the database
  const getAll = async () => {
@@ -52,6 +52,12 @@ function UserView ({checkInput}) {
     function wrongAnswer() {
       console.log("Wrong answer");
     }
+
+    //Print the score, when submit -button is cliked
+    function userAnswers() {
+      console.log(list);
+      setAnswerList("Right answers: " + score);
+    }
   return (
     <div>
       {/* Return buttons. User can decide the learning language. */}
@@ -66,14 +72,12 @@ function UserView ({checkInput}) {
         {state}
       </ul>
 
-      <ul>
-        {state2.map((id) => (<TableComponent2 finnish={id.finnish}/> ))}
-      </ul>
-
-      <button 
-      onClick={() => checkInput()}
+       {/* Return submit answer -button. It will call the useAnswer -function. */}
+       <button 
+      onClick={() => userAnswers()}
         >Submit answers
       </button>
+      {answerList}
     </div>
   )
 }
