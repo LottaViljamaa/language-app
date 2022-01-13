@@ -21,18 +21,17 @@ function UserView ({checkInput}) {
 
   return (
     <div>
+      {/* Return buttons. User can decide the learning language. */}
       <button className='getAll'
-        onClick={getAll}>Learn evertything
+        onClick={getAll}>Learn in Finnish
       </button>
-
-      <ul>
-        {state.map((id) => (<TableComponent english={id.english}/> ))}
-      </ul>
-
 
       <button className='getAll2'
-        onClick={getAll2}>Learn evertything in English
+        onClick={getAll2}>Learn in English
       </button>
+      <ul>
+        {state}
+      </ul>
 
       <ul>
         {state2.map((id) => (<TableComponent2 finnish={id.finnish}/> ))}
