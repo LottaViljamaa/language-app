@@ -38,10 +38,19 @@ function AdminView() {
       <div> 
         <h1>This page is for Admin!</h1>
 
+        {/* Input field to add category. Calls function, which take user input. */}
+       
+
         {/*Go trough the data of database and return all data to the list. */}
         <ul>
         {state.map((id, index) => (<AdminComponent key={index} id={id.id} tag={id.tag} english={id.english} finnish={id.finnish} deleteWord={deleteWord} /> ))}
         </ul>
+        
+         <Input
+          placeholder="Write a category"
+          value={tagWord}
+          required
+        ></Input>
         
       </div>
     ) 
