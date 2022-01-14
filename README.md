@@ -8,6 +8,17 @@ The Application is a school assignment and it's developed as a part of my backen
 
 There is two different views in the application; Admin and User. Admin can delete and create new word pairs. User can practice all word either writing in Finnish or writing in English. After answering, user can submit the answers and check the amount of right answers. 
 
+### Installation
+$git clone https://github.com/LottaViljamaa/full-stack-harjoitustyo-language-app.git
+$cd full-stack-harjoitustyo-language-app
+$npm install 
+$nodemon index.js
+
+$cd full-stack-harjoitustyo-language-app
+$cd frontend
+$npm install
+$npm run start
+
 ### Built with
 
 - Express/Node.js
@@ -15,6 +26,7 @@ There is two different views in the application; Admin and User. Admin can delet
 - MySQL 
 
 ![Admin](https://user-images.githubusercontent.com/77788924/149588264-b5fa7b21-c23b-42da-be71-44eac9a575a3.png)
+
 
 ### Future
 In the future I will add some new features. I will add edit feature so the Admin can edit existing word pairs . I will also implement a feature that allows the User to practice a certain category of words. Also I will add a support for multiple languages.
