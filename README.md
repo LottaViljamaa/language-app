@@ -18,17 +18,10 @@ There is two different views in the application; Admin and User. Admin can delet
 
 ![Admin](https://user-images.githubusercontent.com/77788924/149588264-b5fa7b21-c23b-42da-be71-44eac9a575a3.png)
 
-### Installation
-
-$git clone _____________
-$cd _________
-$ npm install 
-$npm start
-
 ### Future
 In the future I will add some new features. I will add edit feature so the Admin can edit existing word pairs . I will also implement a feature that allows the User to practice a certain category of words. Also I will add a support for multiple languages.
 
-SHORT VIDEO
+[score](https://user-images.githubusercontent.com/77788924/149588475-8dcf0a74-a492-4499-b840-433897322f24.png)
 
 Link to the screencast, where I review all the featurest of the application!
 https://youtu.be/60hXx2rcJ-M
