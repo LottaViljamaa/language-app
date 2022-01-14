@@ -14,9 +14,9 @@ In the future I will add some new features. I hope will add edit feature to Admi
 
 ### Built with
 
-Express/Node.js
-React
-MySQL 
+- Express/Node.js
+- React
+- MySQL 
 
 SCREENSHOT
 
