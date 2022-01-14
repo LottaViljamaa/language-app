@@ -8,9 +8,9 @@ SCREENSHOT
 
 ### How to use?
 
-In the application, there is two different views; Admin and User. Admin can delete and create new word pairs. User can practice all word either writing in Finnish or writing in English. After answering, user can submit the answers and check the amount of right answers. 
+There is two different views in the application; Admin and User. Admin can delete and create new word pairs. User can practice all word either writing in Finnish or writing in English. After answering, user can submit the answers and check the amount of right answers. 
 
-In the future I would like to add some new features. I hope I could add edit feature to Admin. I also hope I could imp a feature that allows the User to practice a certain category of words. 
+In the future I will add some new features. I hope will add edit feature to Admin. I will also implement a feature that allows the User to practice a certain category of words. 
 
 ### Built with
 
