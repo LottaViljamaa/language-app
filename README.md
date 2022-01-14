@@ -10,8 +10,6 @@ SCREENSHOT
 
 There is two different views in the application; Admin and User. Admin can delete and create new word pairs. User can practice all word either writing in Finnish or writing in English. After answering, user can submit the answers and check the amount of right answers. 
 
-In the future I will add some new features. I hope will add edit feature to Admin. I will also implement a feature that allows the User to practice a certain category of words. 
-
 ### Built with
 
 - Express/Node.js
@@ -26,6 +24,9 @@ $git clone _____________
 $cd _________
 $ npm install 
 $npm start
+
+### Future
+In the future I will add some new features. I will add edit feature so the Admin can edit existing word pairs . I will also implement a feature that allows the User to practice a certain category of words. Also I will add a support for multiple languages.
 
 SHORT VIDEO
 
