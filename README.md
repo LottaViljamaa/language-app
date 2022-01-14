@@ -9,11 +9,13 @@ The Application is a school assignment and it's developed as a part of my backen
 There is two different views in the application; Admin and User. Admin can delete and create new word pairs. User can practice all word either writing in Finnish or writing in English. After answering, user can submit the answers and check the amount of right answers. 
 
 ### Installation
+#### To run backend
 - $git clone https://github.com/LottaViljamaa/full-stack-harjoitustyo-language-app.git
 - $cd full-stack-harjoitustyo-language-app
 - $npm install 
 - $nodemon index.js
 
+#### To run frontend
 - $cd full-stack-harjoitustyo-language-app
 - $cd frontend
 - $npm install
