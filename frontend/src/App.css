@@ -50,13 +50,10 @@ a:visited, a {
   padding-left: 30%;
 }
 
-
-
+/* Settings for list in User view */
 .componentFinnish {
   background-color: rgba(172, 172, 172, 0.801);
-
 }
-
 .componentEnglish {
   background-color:rgba(196, 196, 196, 0.801);
 }
@@ -64,6 +61,8 @@ a:visited, a {
 .Tableheader {
   background-color: dimgray;
 }
+
+/* Settings for input fields in Admin view */
 .inputfield {
   margin-right: 15px;
 }
