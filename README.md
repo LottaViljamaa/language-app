@@ -27,13 +27,16 @@ There is two different views in the application; Admin and User. Admin can delet
 - React
 - MySQL 
 
-![Admin](https://user-images.githubusercontent.com/77788924/149588264-b5fa7b21-c23b-42da-be71-44eac9a575a3.png)
+### Pictures of the application
+#### Welcome -page 
+![Welcome](https://user-images.githubusercontent.com/77788924/208725252-ae8d25fd-accf-4a42-88ae-48e268da1700.png)
+
+#### Admin -page
+![Admin](https://user-images.githubusercontent.com/77788924/208725387-45444dcb-fe2d-4e2e-9b7d-309cea866b89.png)
+
+#### User -page
+![User](https://user-images.githubusercontent.com/77788924/208725455-567394ad-bdf9-4f9b-b6d8-7096b385b2c0.png)
 
 
-### Future
-In the future I will add some new features. I will add edit feature so the Admin can edit existing word pairs . I will also implement a feature that allows the User to practice a certain category of words. Also I will add a support for multiple languages.
-
-![score](https://user-images.githubusercontent.com/77788924/149588527-cabd371f-6858-4b2b-b07b-2d7e0049d152.png)
-
-Link to the screencast, where I review all the featurest of the application!
+Link to the screencast, where I review all the featurest of the application! (In Finnish)
 https://youtu.be/60hXx2rcJ-M
