@@ -21,6 +21,9 @@ There is two different views in the application; Admin and User. Admin can delet
 - $npm install
 - $npm run start
 
+#### Note
+- You need to create a database connection (add .env file) to actually run the application
+
 ### Built with
 
 - Express/Node.js
