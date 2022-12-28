@@ -42,6 +42,3 @@ There is two different views in the application; Admin and User. Admin can delet
 
 #### After submiting answers
 ![SubmitAnswers](https://user-images.githubusercontent.com/77788924/208725850-817ac7d9-de93-4f8a-ab91-e696b9e1c8e0.png)
-
-Link to the screencast, where I review all the featurest of the application! (In Finnish)
-https://youtu.be/60hXx2rcJ-M
