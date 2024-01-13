@@ -10,13 +10,13 @@ There is two different views in the application; Admin and User. Admin can delet
 
 ### Installation
 #### To run backend
-- $git clone https://github.com/LottaViljamaa/full-stack-harjoitustyo-language-app.git
-- $cd full-stack-harjoitustyo-language-app
+- $git clone https://github.com/LottaViljamaa/language-app.git
+- $cd language-app
 - $npm install 
 - $nodemon index.js
 
 #### To run frontend
-- $cd full-stack-harjoitustyo-language-app
+- $cd language-app
 - $cd frontend
 - $npm install
 - $npm run start
