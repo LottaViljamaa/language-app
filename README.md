@@ -2,7 +2,7 @@
 
 ### Introduction
 
-The Application is a school assignment and it's developed as a part of my backend course. The application is designed to work in language leaerning. Currently supported languages are Finnish and English. 
+The Application is a school assignment and it's developed as a part of my backend course. The application is designed to work in language learning. Currently supported languages are Finnish and English. 
 
 ### How to use?
 
